@@ -2,15 +2,17 @@ package reloadman;
 
 public class Camera {
 	public double xPos, yPos, xDir, yDir, xPlane, yPlane;
-	public final double MOVE_SPEED = .08;
-	public final double ROTATION_SPEED = .045;
-	public Camera(double x, double y, double xd, double yd, double xp, double yp) {
+	public double MOVE_SPEED = .08;
+	public double ROTATION_SPEED = .045;
+	public Camera(double x, double y, double xd, double yd, double xp, double yp, double ms,double rs) {
 		xPos = x;
 		yPos = y;
 		xDir = xd;
 		yDir = yd;
 		xPlane = xp;
 		yPlane = yp;
+		MOVE_SPEED = ms;
+		ROTATION_SPEED = rs;
 	}
 	public void moveForward(int[][] map) {
 	if(map[(int)(xPos + xDir * MOVE_SPEED)][(int)yPos] == 0) {
